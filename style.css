@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #353535;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.div-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: fixed;
+}
+
+.div-pai {
+    width: 550px;
+    height: 550px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 15px #FBA421 solid;
+    margin-top: 20px;
+    position: relative;
+}
+
+.div-filho{
+    position: absolute;
+    width: 399px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h1{
+    color: white; 
+    text-shadow: #1E1E1E 0.1em 0.1em 0.2em;
+    font-weight: 1000;
+    font-size: 50px;
+}
+
+.buttons{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.iniciar, .resetar{
+    background-color: #FBA421;
+    color: black;
+    font-weight: 700;
+    font-size: 40px;
+    width: 210px;
+    height: 80px;
+    margin: auto 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.resetar{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.iniciar:hover, .resetar:hover{
+    opacity: 0.5;
+}
+
+.iniciar:active{
+    background-color: black;
+    color: #FBA421;
+}
+
+.resetar:active{
+    color: #FBA421;
+    border: 2px solid #FBA421;
+}
+
+
+
+@media screen and (max-width: 500px){
+    
+    .div-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .div-pai {
+        width: 350px;
+        height: 350px;
+        margin-top: 90px;
+    }
+
+    .div-filho{
+        width: 240px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iniciar, .resetar{
+        width: 150px;
+        height: 75px;
+        font-weight: 500 bold;
+        font-size: 30px;
+        margin: 10px;
+    }
+
+}
