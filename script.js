@@ -9,61 +9,45 @@ let minNum = 0
 let hourNum = 0
 let INTERVALO
 
-function milissegundos() {
-    miliNum++
-    if (miliNum < 10) {
-        miliseg.innerHTML = '0' + miliNum
-    } else {
-        miliseg.innerHTML = miliNum
-    }
 
+function cronometro () {
+    if (miliNum < 99) {
+        miliNum++;
+        if (miliNum < 10) { miliNum = "0" + miliNum }
+        miliseg.innerHTML = "" + miliNum;
+    }
     if (miliNum == 99) {
-        miliNum = 0
-        segundos()
+        miliNum = -1;
     }
-}
-
-function segundos() {
-    segNum++
-    if (segNum < 10) {
-        seg.innerHTML = '0' + segNum
-    } else {
-        seg.innerHTML = segNum
+    if (miliNum == 0) {
+        segNum++;
+        if (segNum < 10) { segNum = "0" + segNum }
+        seg.innerHTML = "" + segNum;
     }
-
     if (segNum == 59) {
-        segNum = 0
-        minutos()
+        segNum = -1;
     }
+    if ((miliNum == 0) && (segNum == 0)) {
+        minNum++;
+        if (minNum < 10) { minNum = "0" + minNum}
+        min.innerHTML = "" + minNum;
+    }
+    if (minNum == 59) {
+        minNum = -1;
+    }
+    if ((miliNum == 0) && (segNum == 0) && (minNum == 0) ) {
+        hourNum++;
+        if (hourNum < 10) {hourNum = "0" + hourNum}
+        hour.innerHTML = hourNum;
+    }
+
 }
 
-function minutos() {
-    minNum++
-    if (minNum < 10) {
-        min.innerHTML = '0' + minNum
-    } else {
-        min.innerHTML = minNum
-    }
-
-    if (minNum == 60){
-        minNum = 0
-        horas()
-    }
-}
-
-function horas(){
-    hourNum++
-    if (hourNum < 10){
-        hour.innerHTML = '0' + hourNum
-    } else {
-        hour.innerHTML = hourNum
-    }
-}
 
 function start() {
     clearInterval(INTERVALO)
     INTERVALO = setInterval(() => {
-        milissegundos()
+        cronometro()
     }, 10)
 
     // const troca = document.querySelector(".iniciar")
