@@ -32,7 +32,7 @@
 
 .div-filho{
     position: absolute;
-    width: 399px;
+    width: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -48,6 +48,10 @@ h1{
 .buttons{
     margin-top: 10px;
     display: inline-block;
+}
+
+#pausar, #continuar{
+    display: none;
 }
 
 .iniciar, .resetar{
@@ -101,7 +105,7 @@ h1{
     }
 
     .div-filho{
-        width: 240px;
+        width: 241px;
     }
 
     h1{
