@@ -5,9 +5,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #353535;
     color: white;
     font-family: "Inter", sans-serif;
+}
+
+body{
+    background-color: #353535;
 }
 
 .div-container{
@@ -23,7 +26,6 @@
 .div-pai {
     width: 550px;
     height: 550px;
-    background-color: transparent;
     border-radius: 50%;
     border: 15px #FBA421 solid;
     margin-top: 20px;
@@ -32,10 +34,14 @@
 
 .div-filho{
     position: absolute;
-    width: 400px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1{
